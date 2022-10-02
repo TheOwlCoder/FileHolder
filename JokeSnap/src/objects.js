@@ -980,7 +980,7 @@ SpriteMorph.prototype.initBlocks = function () {
         doAsk: {
             type: 'command',
             category: 'sensing',
-            spec: 'ask %s and wait',
+            spec: 'ask the question %s and wait for an answer. The question will appear on the canvas. Unfortunatly, since this isnt snap 8, you cant make context menus',
             defaults: [localize('what\'s your name?')]
         },
         reportLastAnswer: { // retained for legacy compatibility
@@ -1030,7 +1030,7 @@ SpriteMorph.prototype.initBlocks = function () {
         doResetTimer: {
             type: 'command',
             category: 'sensing',
-            spec: 'reset timer'
+            spec: 'reset the timer to 0.00 seconds.'
         },
         reportTimer: { // retained for legacy compatibility
             dev: true,
@@ -1064,7 +1064,7 @@ SpriteMorph.prototype.initBlocks = function () {
         doSetGlobalFlag: {
             type: 'command',
             category: 'sensing',
-            spec: 'set %setting to %b',
+            spec: 'set the setting %setting to the condition %b',
             defaults: [['video capture']]
         },
         reportGlobalFlag: {
