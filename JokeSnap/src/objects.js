@@ -1321,36 +1321,36 @@ SpriteMorph.prototype.initBlocks = function () {
         doSetVar: {
             type: 'command',
             category: 'variables',
-            spec: 'set %var to %s',
+            spec: 'set the variable %var to the value of %s',
             defaults: [null, 0]
         },
         doChangeVar: {
             type: 'command',
             category: 'variables',
-            spec: 'change %var by %n',
+            spec: 'change the variable %var by %n',
             defaults: [null, 1]
         },
         doShowVar: {
             type: 'command',
             category: 'variables',
-            spec: 'show variable %var'
+            spec: 'show the variable %var on the canvas'
         },
         doHideVar: {
             type: 'command',
             category: 'variables',
-            spec: 'hide variable %var'
+            spec: 'hide the variable %var on the canvas'
         },
         doDeclareVariables: {
             type: 'command',
             category: 'other',
-            spec: 'script variables %scriptVars'
+            spec: 'these are script variables %scriptVars . Use these variables in a script so you dont ave to make a new one. These are not permenent'
         },
 
         // inheritance
         doDeleteAttr: {
             type: 'command',
             category: 'variables',
-            spec: 'inherit %shd'
+            spec: 'inherit %shd . this block is confusing so i dont know how to use it or what to write here'
         },
 
         // Lists
@@ -1407,25 +1407,25 @@ SpriteMorph.prototype.initBlocks = function () {
         doAddToList: {
             type: 'command',
             category: 'lists',
-            spec: 'add %s to %l',
+            spec: 'add the thing %s to the list %l',
             defaults: [localize('thing')]
         },
         doDeleteFromList: {
             type: 'command',
             category: 'lists',
-            spec: 'delete %ida of %l',
+            spec: 'delete the item number %ida from the list %l',
             defaults: [1]
         },
         doInsertInList: {
             type: 'command',
             category: 'lists',
-            spec: 'insert %s at %idx of %l',
+            spec: 'insert the thing %s at the item number %idx to the list %l',
             defaults: [localize('thing'), 1]
         },
         doReplaceInList: {
             type: 'command',
             category: 'lists',
-            spec: 'replace item %idx of %l with %s',
+            spec: 'replace the item number %idx of the list %l with the thing %s',
             defaults: [1, null, localize('thing')]
         },
 
@@ -1436,14 +1436,12 @@ SpriteMorph.prototype.initBlocks = function () {
             spec: 'numbers from %n to %n',
             defaults: [1, 10]
         },
-    /*
         reportListCombination: { // currently not in use
             type: 'reporter',
             category: 'lists',
             spec: '%mlfunc %lists',
             defaults: [['append']]
         },
-    */
         reportConcatenatedLists: {
             type: 'reporter',
             category: 'lists',
@@ -1465,14 +1463,12 @@ SpriteMorph.prototype.initBlocks = function () {
             spec: 'reshape %l to %nums',
             defaults: [null, [4, 3]]
         },
-    /*
         reportSlice: { // currently not in use
             type: 'reporter',
             category: 'lists',
             spec: 'slice %l by %nums',
             defaults: [null, [2, -1]]
         },
-    */
 
         // HOFs
         reportMap: {
@@ -1522,35 +1518,34 @@ SpriteMorph.prototype.initBlocks = function () {
         doForEach: {
             type: 'command',
             category: 'lists',
-            spec: 'for each %upvar in %l %cla',
+            spec: 'for each item %upvar in the list %l run the code %cla',
             defaults: [localize('item')]
         },
 
         // Tables - experimental
         doShowTable: {
-            dev: true,
             type: 'command',
             category: 'lists',
-            spec: 'show table %l'
+            spec: 'experimental block: show table %l'
         },
 
         // Code mapping
         doMapCodeOrHeader: {
             type: 'command',
             category: 'other',
-            spec: 'map %cmdRing to %codeKind %code',
+            spec: 'map %cmdRing to %codeKind %code, or just use google maps',
             defaults: [null, ['code']]
         },
         doMapValueCode: {
             type: 'command',
             category: 'other',
-            spec: 'map %mapValue to code %code',
+            spec: 'map %mapValue to code %code, or just use google, or just use google maps',
             defaults: [['String'], '<#1>']
         },
         doMapListCode: {
             type: 'command',
             category: 'other',
-            spec: 'map %codeListPart of %codeListKind to code %code'
+            spec: 'map %codeListPart of %codeListKind to code %code, or just use google maps'
         },
         reportMappedCode: {
             type: 'reporter',
@@ -1561,12 +1556,12 @@ SpriteMorph.prototype.initBlocks = function () {
         // Extensions
         doApplyExtension: {
             type: 'command',
-            category: 'other',
+            category: 'control',
             spec: 'primitive %prim %mult%s'
         },
         reportApplyExtension: {
             type: 'reporter',
-            category: 'other',
+            category: 'control',
             spec: 'primitive %prim %mult%s'
         },
 
