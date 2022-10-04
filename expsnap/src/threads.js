@@ -3218,7 +3218,7 @@ Process.prototype.doGlideTo = function (secs, name) {
          	}
         } else {
             if (name instanceof List) {
-                thisObj.gotoXY(
+                thisObj.doGlide(
                     name.at(1),
                     name.at(2)
                 );
@@ -3227,7 +3227,7 @@ Process.prototype.doGlideTo = function (secs, name) {
             thatObj = this.getOtherObject(name, this.homeContext.receiver);
             if (thatObj) {
                 thisObj.doGlide(
-                    
+
                     thatObj.xPosition(),
                     thatObj.yPosition()
                 );
