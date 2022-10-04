@@ -3171,6 +3171,10 @@ Process.prototype.doWait = function (secs) {
 };
 
 Process.prototype.doGlide = function (secs, endX, endY) {
+    var thisObj = this.blockReceiver(),
+        thatObj,
+        stage;
+
     if (!this.context.startTime) {
         this.context.startTime = Date.now();
         this.context.startValue = new Point(
