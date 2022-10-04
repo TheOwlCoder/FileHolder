@@ -3205,7 +3205,7 @@ Process.prototype.doGlideTo = function (secs, name) {
 
     if (thisObj) {
         if (this.inputOption(name) === 'center') {
-            doGlide(secs, 0, 0);
+            thisObj.doGlide(secs, 0, 0);
         } else if (this.inputOption(name) === 'mouse-pointer') {
             doGlide(secs, this.reportMouseX(), this.reportMouseY());
         } else if (this.inputOption(name) === 'random position') {
@@ -3226,7 +3226,8 @@ Process.prototype.doGlideTo = function (secs, name) {
             }
             thatObj = this.getOtherObject(name, this.homeContext.receiver);
             if (thatObj) {
-                thisObj.gotoXY(
+                thisObj.doGlide(
+                    
                     thatObj.xPosition(),
                     thatObj.yPosition()
                 );
