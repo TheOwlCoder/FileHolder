@@ -862,7 +862,7 @@ Process.prototype.doApplyExtension = function (prim, args) {
 Process.prototype.reportApplyExtension = function (prim, args) {
     var ext = SnapExtensions.primitives.get(prim);
     if (isNil(ext)) {
-        throw new Error(localize('missing / unspecified extension') + ': ' + prim);
+        throw new Error(localize('missing / unspecified extension') + ': ' + prim + ' pls fix');
     }
     return ext.apply(
         this.blockReceiver(),
