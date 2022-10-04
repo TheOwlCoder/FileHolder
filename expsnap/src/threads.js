@@ -1312,16 +1312,6 @@ Process.prototype.reifyPredicate = function (topBlock, parameterNames) {
     return this.reify(topBlock, parameterNames);
 };
 
-Process.prototype.reportJSFunction = function (parmNames, body) {
-    if (!this.enableJS) {
-        throw new Error('JavaScript extensions for Snap!\nare turned off');
-    }
-    return Function.apply(
-        null,
-        parmNames.itemsArray().concat([body])
-    );
-};
-
 Process.prototype.doRun = function (context, args) {
     return this.evaluate(context, args, true);
 };
