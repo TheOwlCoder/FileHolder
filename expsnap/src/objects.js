@@ -2472,6 +2472,7 @@ SpriteMorph.prototype.blockTemplates = function (
         blocks.push(block('gotoXY'));
         blocks.push(block('doGotoObject'));
         blocks.push(block('doGlide'));
+        blocks.push(block('doGlideTo'));
         blocks.push('-');
         blocks.push(block('changeXPosition'));
         blocks.push(block('setXPosition'));
