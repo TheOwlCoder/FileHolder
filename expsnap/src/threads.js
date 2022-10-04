@@ -3194,28 +3194,37 @@ Process.prototype.doGlide = function (secs, endX, endY) {
     this.pushContext();
 };
 
-Process.prototype.doGlideTo = function (secs, endX, endY) {
-    if (!this.context.startTime) {
-        this.context.startTime = Date.now();
-        this.context.startValue = new Point(
-            this.blockReceiver().xPosition(),
-            this.blockReceiver().yPosition()
-        );
+Process.prototype.doGlideTo = function (name) {
+    if (thisObj) {
+        if (this.inputOption(name) === 'center') {
+            thisObj.gotoXY(0, 0);
+        } else if (this.inputOption(name) === 'mouse-pointer') {
+            thisObj.gotoXY(this.reportMouseX(), this.reportMouseY());
+        } else if (this.inputOption(name) === 'random position') {
+	        stage = thisObj.parentThatIsA(StageMorph);
+    	    if (stage) {
+         		thisObj.setCenter(new Point(
+					this.reportBasicRandom(stage.left(), stage.right()),
+                    this.reportBasicRandom(stage.top(), stage.bottom())
+                ));
+         	}
+        } else {
+            if (name instanceof List) {
+                thisObj.gotoXY(
+                    name.at(1),
+                    name.at(2)
+                );
+                return;
+            }
+            thatObj = this.getOtherObject(name, this.homeContext.receiver);
+            if (thatObj) {
+                thisObj.gotoXY(
+                    thatObj.xPosition(),
+                    thatObj.yPosition()
+                );
+            }
+        }
     }
-    if ((Date.now() - this.context.startTime) >= (secs * 1000)) {
-        this.blockReceiver().gotoXY(endX, endY);
-        return null;
-    }
-    this.blockReceiver().glide(
-        secs * 1000,
-        endX,
-        endY,
-        Date.now() - this.context.startTime,
-        this.context.startValue
-    );
-
-    this.pushContext('doYield');
-    this.pushContext();
 };
 
 Process.prototype.doSayFor = function (data, secs) {
