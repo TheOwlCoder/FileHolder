@@ -3199,6 +3199,10 @@ Process.prototype.doGlide = function (secs, endX, endY) {
 };
 
 Process.prototype.doGlideTo = function (name) {
+    var thisObj = this.blockReceiver(),
+        thatObj,
+        stage;
+
     if (thisObj) {
         if (this.inputOption(name) === 'center') {
             thisObj.gotoXY(0, 0);
