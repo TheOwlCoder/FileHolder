@@ -265,8 +265,7 @@ SpriteMorph.prototype.initBlocks = function () {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'glide %n secs to x: %n y: %n',
-            defaults: [1, 0, 0]
+            spec: 'glide to %dst'
         },
         changeXPosition: {
             only: SpriteMorph,
