@@ -3194,6 +3194,30 @@ Process.prototype.doGlide = function (secs, endX, endY) {
     this.pushContext();
 };
 
+Process.prototype.doGlideTo = function (secs, endX, endY) {
+    if (!this.context.startTime) {
+        this.context.startTime = Date.now();
+        this.context.startValue = new Point(
+            this.blockReceiver().xPosition(),
+            this.blockReceiver().yPosition()
+        );
+    }
+    if ((Date.now() - this.context.startTime) >= (secs * 1000)) {
+        this.blockReceiver().gotoXY(endX, endY);
+        return null;
+    }
+    this.blockReceiver().glide(
+        secs * 1000,
+        endX,
+        endY,
+        Date.now() - this.context.startTime,
+        this.context.startValue
+    );
+
+    this.pushContext('doYield');
+    this.pushContext();
+};
+
 Process.prototype.doSayFor = function (data, secs) {
     if (!this.context.startTime) {
         this.context.startTime = Date.now();
