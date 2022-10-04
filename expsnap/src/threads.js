@@ -3207,7 +3207,7 @@ Process.prototype.doGlideTo = function (secs, name) {
         if (this.inputOption(name) === 'center') {
             thisObj.doGlide(secs, 0, 0);
         } else if (this.inputOption(name) === 'mouse-pointer') {
-            doGlide(secs, this.reportMouseX(), this.reportMouseY());
+            thisObj.doGlide(secs, this.reportMouseX(), this.reportMouseY());
         } else if (this.inputOption(name) === 'random position') {
 	        stage = thisObj.parentThatIsA(StageMorph);
     	    if (stage) {
