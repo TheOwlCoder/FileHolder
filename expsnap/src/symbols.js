@@ -145,7 +145,8 @@ SymbolMorph.prototype.names = [
     'flipVertical',
     'flipHorizontal',
     'trash',
-    'trashFull'
+    'trashFull',
+    'owl'
 ];
 
 // SymbolMorph instance creation:
