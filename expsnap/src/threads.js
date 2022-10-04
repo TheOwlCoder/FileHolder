@@ -3203,40 +3203,36 @@ Process.prototype.doGlideTo = function (secs, name) {
         thatObj,
         stage;
 
-    if (!this.context.startTime) {
-        this.context.startTime = Date.now();
-        this.context.startValue = new Point(
-            this.blockReceiver().xPosition(),
-            this.blockReceiver().yPosition()
-        );
+    if (thisObj) {
+        if (this.inputOption(name) === 'center') {
+            thisObj.doGlide(sec, 0, 0);
+        } else if (this.inputOption(name) === 'mouse-pointer') {
+            thisObj.doGlide(sec, this.reportMouseX(), this.reportMouseY());
+        } else if (this.inputOption(name) === 'random position') {
+	        stage = thisObj.parentThatIsA(StageMorph);
+    	    if (stage) {
+         		thisObj.setCenter(new Point(
+					this.reportBasicRandom(stage.left(), stage.right()),
+                    this.reportBasicRandom(stage.top(), stage.bottom())
+                ));
+         	}
+        } else {
+            if (name instanceof List) {
+                thisObj.gotoXY(
+                    name.at(1),
+                    name.at(2)
+                );
+                return;
+            }
+            thatObj = this.getOtherObject(name, this.homeContext.receiver);
+            if (thatObj) {
+                thisObj.gotoXY(
+                    thatObj.xPosition(),
+                    thatObj.yPosition()
+                );
+            }
+        }
     }
-    if ((Date.now() - this.context.startTime) >= (secs * 1000)) {
-        this.blockReceiver().gotoXY(endX, endY);
-        return null;
-    }
-    this.blockReceiver().glide(
-        secs * 1000,
-        endX,
-        endY,
-        Date.now() - this.context.startTime,
-        this.context.startValue
-    );
-
-    this.pushContext('doYield');
-    this.pushContext();
-};
-
-Process.prototype.doSayFor = function (data, secs) {
-    if (!this.context.startTime) {
-        this.context.startTime = Date.now();
-        this.blockReceiver().bubble(data);
-    }
-    if ((Date.now() - this.context.startTime) >= (secs * 1000)) {
-        this.blockReceiver().stopTalking();
-        return null;
-    }
-    this.pushContext('doYield');
-    this.pushContext();
 };
 
 Process.prototype.doThinkFor = function (data, secs) {
