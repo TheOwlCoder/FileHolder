@@ -3204,12 +3204,10 @@ Process.prototype.doGlideTo = function (secs, name) {
     stage;
     this.blockReceiver().glide(
         secs * 1000,
-        endX,
-        endY,
         Date.now() - this.context.startTime,
         this.context.startValue
     );
-    
+
 if (thisObj) {
     if (this.inputOption(name) === 'center') {
         thisObj.glide(secs, 0, 0);
