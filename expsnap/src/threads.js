@@ -3199,43 +3199,7 @@ Process.prototype.doGlide = function (secs, endX, endY) {
 };
 
 Process.prototype.doGlideTo = function (secs, name) {
-    var thisObj = this.blockReceiver(),
-    thatObj,
-    stage;
-    this.blockReceiver().glide(
-        secs * 1000,
-    );
-
-if (thisObj) {
-    if (this.inputOption(name) === 'center') {
-        thisObj.glide(secs, 0, 0);
-    } else if (this.inputOption(name) === 'mouse-pointer') {
-        thisObj.gotoXY(this.reportMouseX(), this.reportMouseY());
-    } else if (this.inputOption(name) === 'random position') {
-        stage = thisObj.parentThatIsA(StageMorph);
-        if (stage) {
-             thisObj.setCenter(new Point(
-                this.reportBasicRandom(stage.left(), stage.right()),
-                this.reportBasicRandom(stage.top(), stage.bottom())
-            ));
-         }
-    } else {
-        if (name instanceof List) {
-            thisObj.gotoXY(
-                name.at(1),
-                name.at(2)
-            );
-            return;
-        }
-        thatObj = this.getOtherObject(name, this.homeContext.receiver);
-        if (thatObj) {
-            thisObj.gotoXY(
-                thatObj.xPosition(),
-                thatObj.yPosition()
-            );
-        }
-    }
-    }
+this.alert(secs)
 };
 
 Process.prototype.doThinkFor = function (data, secs) {
