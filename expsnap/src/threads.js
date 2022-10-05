@@ -3200,40 +3200,39 @@ Process.prototype.doGlide = function (secs, endX, endY) {
 
 Process.prototype.doGlideTo = function (secs, name) {
     var thisObj = this.blockReceiver(),
-        thatObj,
-        stage;
+    thatObj,
+    stage;
 
-    if (thisObj) {
-        if (this.inputOption(name) === 'center') {
-            thisObj.glide(0, 0);
-        } else if (this.inputOption(name) === 'mouse-pointer') {
-            thisObj.glide(secs, this.reportMouseX(), this.reportMouseY());
-        } else if (this.inputOption(name) === 'random position') {
-	        stage = thisObj.parentThatIsA(StageMorph);
-    	    if (stage) {
-         		thisObj.setCenter(new Point(
-					this.reportBasicRandom(stage.left(), stage.right()),
-                    this.reportBasicRandom(stage.top(), stage.bottom())
-                ));
-         	}
-        } else {
-            if (name instanceof List) {
-                thisObj.doGlide(
-                    name.at(1),
-                    name.at(2)
-                );
-                return;
-            }
-            thatObj = this.getOtherObject(name, this.homeContext.receiver);
-            if (thatObj) {
-                thisObj.doGlide(
-
-                    thatObj.xPosition(),
-                    thatObj.yPosition()
-                );
-            }
+if (thisObj) {
+    if (this.inputOption(name) === 'center') {
+        thisObj.gotoXY(0, 0);
+    } else if (this.inputOption(name) === 'mouse-pointer') {
+        thisObj.gotoXY(this.reportMouseX(), this.reportMouseY());
+    } else if (this.inputOption(name) === 'random position') {
+        stage = thisObj.parentThatIsA(StageMorph);
+        if (stage) {
+             thisObj.setCenter(new Point(
+                this.reportBasicRandom(stage.left(), stage.right()),
+                this.reportBasicRandom(stage.top(), stage.bottom())
+            ));
+         }
+    } else {
+        if (name instanceof List) {
+            thisObj.gotoXY(
+                name.at(1),
+                name.at(2)
+            );
+            return;
+        }
+        thatObj = this.getOtherObject(name, this.homeContext.receiver);
+        if (thatObj) {
+            thisObj.gotoXY(
+                thatObj.xPosition(),
+                thatObj.yPosition()
+            );
         }
     }
+}
 };
 
 Process.prototype.doThinkFor = function (data, secs) {
