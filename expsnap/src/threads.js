@@ -3234,11 +3234,6 @@ Process.prototype.doGlideTo = function (secs, name) {
             
         }
     }
-    this.blockReceiver().glide(
-        secs * 1000,
-        Date.now() - this.context.startTime,
-        this.context.startValue
-    );
 };
 
 Process.prototype.doThinkFor = function (data, secs) {
