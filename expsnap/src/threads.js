@@ -3235,7 +3235,7 @@ if (thisObj) {
             );
         }
     }
-}
+    }
 };
 
 Process.prototype.doThinkFor = function (data, secs) {
