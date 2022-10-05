@@ -3199,7 +3199,7 @@ Process.prototype.doGlide = function (secs, endX, endY) {
 };
 
 Process.prototype.doGlideTo = function (secs, name) {
-this.alert(secs)
+alert(secs)
 };
 
 Process.prototype.doThinkFor = function (data, secs) {
