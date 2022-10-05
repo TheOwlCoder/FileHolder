@@ -3205,7 +3205,7 @@ Process.prototype.doGlideTo = function (secs, name) {
 
     if (thisObj) {
         if (this.inputOption(name) === 'center') {
-            thisObj.glide(secs, 0, 0);
+            glide(secs, 0, 0);
         } else if (this.inputOption(name) === 'mouse-pointer') {
             thisObj.glide(secs, this.reportMouseX(), this.reportMouseY());
         } else if (this.inputOption(name) === 'random position') {
