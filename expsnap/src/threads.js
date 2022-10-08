@@ -3204,7 +3204,21 @@ Process.prototype.doGlideTo = function (secs, name) {
         stage;
 
     if (thisObj) {
+            if (!this.context.startTime) {
+        this.context.startTime = Date.now();
+        this.context.startValue = new Point(
+            this.blockReceiver().xPosition(),
+            this.blockReceiver().yPosition()
+        );
+    }
         if (this.inputOption(name) === 'center') {
+            if (!this.context.startTime) {
+                this.context.startTime = Date.now();
+                this.context.startValue = new Point(
+                    this.blockReceiver().xPosition(),
+                    this.blockReceiver().yPosition()
+                );
+            }
             if ((Date.now() - this.context.startTime) >= (secs * 1000)) {
                 this.blockReceiver().gotoXY(0, 0);
                 return null;
