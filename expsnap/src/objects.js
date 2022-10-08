@@ -3009,7 +3009,7 @@ SpriteMorph.prototype.makeBlockButton = function (category) {
     var button = new PushButtonMorph(
         this,
         'makeBlock',
-        'Make a block'
+        'Make a custom block'
     );
 
     button.userMenu = this.helpMenu;
