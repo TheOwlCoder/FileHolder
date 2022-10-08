@@ -3215,8 +3215,8 @@ Process.prototype.doGlideTo = function (secs, name) {
             if (!this.context.startTime) {
                 this.context.startTime = Date.now();
                 this.context.startValue = new Point(
-                    this.blockReceiver().xPosition(),
-                    this.blockReceiver().yPosition()
+                0,
+                0
                 );
             }
             if ((Date.now() - this.context.startTime) >= (secs * 1000)) {
