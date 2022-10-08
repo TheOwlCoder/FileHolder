@@ -3178,8 +3178,8 @@ Process.prototype.doGlide = function (secs) {
     if (!this.context.startTime) {
         this.context.startTime = Date.now();
         this.context.startValue = new Point(
-            0,
-            0
+                this.blockReceiver().xPosition(),
+                this.blockReceiver().yPosition()
         );
     }
     if ((Date.now() - this.context.startTime) >= (secs * 1000)) {
