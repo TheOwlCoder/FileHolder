@@ -3223,6 +3223,13 @@ Process.prototype.doGlideTo = function (secs, name) {
                 this.blockReceiver().gotoXY(0, 0);
                 return null;
             }
+            this.blockReceiver().glide(
+                secs * 1000,
+                0,
+                0,
+                Date.now() - this.context.startTime,
+                this.context.startValue
+            );
         } else if (this.inputOption(name) === 'mouse-pointer') {
             thisObj.gotoXY(this.reportMouseX(), this.reportMouseY());
         } else if (this.inputOption(name) === 'random position') {
