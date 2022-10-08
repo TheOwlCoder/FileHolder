@@ -1745,7 +1745,7 @@ SpriteMorph.prototype.blockAlternatives = {
     doFaceTowards:  ['doGotoObject'],
     gotoXY: [['doGlide', 1]],
     doGotoObject: ['doFaceTowards'],
-    doGlide: [['gotoXY', 'doGlideTo']],
+    doGlide: [['doGlideTo', 1]],
     doGlideTo: [['doGlide', -1]],
     changeXPosition: ['changeYPosition', 'setXPosition', 'setYPosition',
         'forward'],
