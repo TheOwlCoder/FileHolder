@@ -3170,7 +3170,7 @@ Process.prototype.doWait = function (secs) {
     this.pushContext();
 };
 
-Process.prototype.doGlide = function (secs, endX, endY) {
+Process.prototype.doGlide = function (secs) {
     var thisObj = this.blockReceiver(),
         thatObj,
         stage;
@@ -3178,18 +3178,18 @@ Process.prototype.doGlide = function (secs, endX, endY) {
     if (!this.context.startTime) {
         this.context.startTime = Date.now();
         this.context.startValue = new Point(
-            this.blockReceiver().xPosition(),
-            this.blockReceiver().yPosition()
+            0,
+            0
         );
     }
     if ((Date.now() - this.context.startTime) >= (secs * 1000)) {
-        this.blockReceiver().gotoXY(endX, endY);
+        this.blockReceiver().gotoXY(0, 0);
         return null;
     }
     this.blockReceiver().glide(
         secs * 1000,
-        endX,
-        endY,
+        0,
+        0,
         Date.now() - this.context.startTime,
         this.context.startValue
     );
