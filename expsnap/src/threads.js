@@ -3205,7 +3205,10 @@ Process.prototype.doGlideTo = function (secs, name) {
 
     if (thisObj) {
         if (this.inputOption(name) === 'center') {
-            thisObj.doGlide(0, 0);
+            if ((Date.now() - this.context.startTime) >= (secs * 1000)) {
+                this.blockReceiver().gotoXY(0, 0);
+                return null;
+            }
         } else if (this.inputOption(name) === 'mouse-pointer') {
             thisObj.gotoXY(this.reportMouseX(), this.reportMouseY());
         } else if (this.inputOption(name) === 'random position') {
