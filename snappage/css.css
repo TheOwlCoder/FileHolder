@@ -12,12 +12,12 @@ body {
 	border-bottom: 2px solid #000000;
 }
 #wrapper {
-	background-color: #383838;
+	background-color: #381e1e1e;
 	color: white;
 	margin-top: 48px;
 }
 .container, .project.big, .collection:not(.small) {
-	background-color: #383838;
+	background-color: #1e1e1e;
 	border: 1px solid #888;
 	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.35);
 	margin-bottom: 50px;
