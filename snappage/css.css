@@ -111,7 +111,7 @@ body {
 .project.big .notes {
     padding: .5em;
     background: #1d1d1d;
-    color: #ffffff;
+    color: #1d1d1d;
     border-radius: 5px;
     overflow: auto;
     box-sizing: border-box;
