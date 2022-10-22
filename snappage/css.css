@@ -112,7 +112,7 @@ body {
 .collection .description,
 .project.big .notes {
     padding: .5em;
-    background: #808080;
+    background: #1d1d1d;
     color: #ffffff;
     border-radius: 5px;
     overflow: auto;
