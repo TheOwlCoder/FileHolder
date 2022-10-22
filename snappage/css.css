@@ -1,0 +1,125 @@
+html {
+	background-color: #1e1e1e;
+}
+body {
+	background-color: #1e1e1e;
+}
+#top-bar {
+	position: fixed;
+	z-index: 99;
+	background-color: #292929;
+	width: 100vw;
+	border-bottom: 2px solid #000000;
+}
+#wrapper {
+	background-color: #383838;
+	color: white;
+	margin-top: 48px;
+}
+.container, .project.big, .collection:not(.small) {
+	background-color: #383838;
+	border: 1px solid #888;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.35);
+	margin-bottom: 50px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.project.big .title .author {
+	position: relative !important;
+}
+.project.big .title .remixed-from {
+	right: 7px !important;
+}
+.collection:not(.small) .contents, .viewer {
+	margin-left: 10px;
+}
+.viewer {
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.details {
+	border-radius: 15px;
+}
+.header, .title {
+	margin: 0;
+	margin-bottom: .25em;
+	padding: .4em 0 .4em 10px;
+	background-color: #383838;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-top: 2px solid #383838;
+	border-bottom: 1px solid #383838;
+}
+.bar {
+	padding-left: 30px;
+}
+.paginator {
+	margin: 0;
+	margin-top: 13px;
+}
+#footer {
+	background-color: #888;
+}
+.is-public, .is-published {
+	display: none;
+}
+.my_projects.list .is-public, .my_projects.list .is-published, .my_collections.list .is-public, .my_collections.list .is-published {
+	display: inline;
+}
+.embed:not([style*="position: fixed;"]) {
+	z-index: 98 !important;	
+}
+.pure-menu-children {
+	background-color: #878787 !important;
+	border: 1px solid #575757 !important;
+	border-top: none !important;
+}
+.pure-button {
+	color: #fff;
+	background-color: #878787;
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.35);
+}
+.notes, .description {
+	border: 2px dashed #8a8a8a;
+}
+.user_results.list {
+	margin: 15px;
+}
+.my_collections.search, .my_projects.search {
+	margin-top: 10px;
+	margin-left: -20px !important;
+}
+.buttons {
+	justify-content: space-around;
+}
+.collection .title h1[contenteditable] {
+	border: 2px dashed #383838;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.collection .title h1[contenteditable]:hover {
+	border: 2px dashed #848484;
+}
+.pure-menu-active > .pure-menu-link, .pure-menu-link:hover, .pure-menu-link:focus {
+	background-color: #808080;
+}
+#top-bar .pure-menu-link:focus, #top-bar .pure-menu-link:hover {
+	color: #fff;
+}
+.collection .description,
+.project.big .notes {
+    padding: .5em;
+    background: #808080;
+    color: #ffffff;
+    border-radius: 5px;
+    overflow: auto;
+    box-sizing: border-box;
+    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    height: 150px;
+    margin-bottom: .5em;
+}
