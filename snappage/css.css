@@ -96,7 +96,7 @@ body {
 	justify-content: space-around;
 }
 .collection .title h1[contenteditable] {
-	border: 2px dashed #383838;
+	border: 2px dashed #292929;
 	padding-left: 2px;
 	padding-right: 2px;
 }
