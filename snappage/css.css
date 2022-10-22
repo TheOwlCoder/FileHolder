@@ -101,7 +101,7 @@ body {
 	padding-right: 2px;
 }
 .collection .title h1[contenteditable]:hover {
-	border: 2px dashed #848484;
+	border: 2px dashed #292929;
 }
 .pure-menu-active > .pure-menu-link, .pure-menu-link:hover, .pure-menu-link:focus {
 	background-color: #0d0d0d;
