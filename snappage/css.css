@@ -82,9 +82,7 @@ body {
 	border-radius: 5px;
 	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.35);
 }
-.notes, .description {
-	border: 2px dashed #8a8a8a;
-}
+
 .user_results.list {
 	margin: 15px;
 }
@@ -107,7 +105,7 @@ body {
 	background-color: #0d0d0d;
 }
 #top-bar .pure-menu-link:focus, #top-bar .pure-menu-link:hover {
-	color: #fff;
+	color: #1d1d1d;
 }
 .collection .description,
 .project.big .notes {
